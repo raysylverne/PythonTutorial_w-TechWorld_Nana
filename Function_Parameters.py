@@ -70,8 +70,10 @@ def days_to_units(num_of_days, custom_message):
 # Hence the name local. If you try to use it outside of that function you will get and error
 # You would have to redefine the variable in the new function before you could call on it
 
-def scope_check():
-    print(name_of_unit)    #This area is known as the function body
-    print(num_of_days)     #This area is known as the function body
+def scope_check(num_of_days):   #internal variable being passed as a parameter
+    my_var = "variable inside of function"   #This is a defined variable
+    print(name_of_unit)                      #This area is known as the function body
+    print(num_of_days)                       #This area is known as the function body
+    print(my_var)
 
-scope_check()
+scope_check(20)
