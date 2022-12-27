@@ -25,16 +25,32 @@ day_to_units()
 # Information can be passed into functions as parameters
 # Parameters are also called arguments (input)
 
+''' 
+calculation_to_units = 24
+name_of_unit = "hours"
+
+
+def days_to_units(num_of_days):
+    print(f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}")
+    print("All good!")
+
+days_to_units(20)
+days_to_units(20)
+days_to_units(40)
+'''
+
+# How to pass multiple input variables to a function
 
 calculation_to_units = 24
 name_of_unit = "hours"
 
+# Add your variable within the rounded brackets and separate with a comma
+# Add the newly created variable within your function (custom_message)
 
 def days_to_units(num_of_days, custom_message):
     print(f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}")
     print(custom_message)
 
-
-days_to_units(20, "Awesome!")
-days_to_units(30, "Looks Good!")
-
+days_to_units(20, "Awesome")
+days_to_units(30, "Looks Great")
+days_to_units(40, "Job Well Done!")
