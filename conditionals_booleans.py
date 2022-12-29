@@ -3,19 +3,19 @@ name_of_unit = "hours"
 
 
 def days_to_units(num_of_days):
-    if num_of_days > 0:     # this is a conditional that cna be true or false
         return f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}"
 
 def validate_and_execute():
     if user_input.isdigit():
         calculated_value = days_to_units(int(user_input))
-        print(calculated_value)
+        if int(user_input) > 0:  # this is a conditional that cna be true or false
+            print(calculated_value)
     else:
         print("Your input is not a number don't crash the program")
 
 user_input = input("Hey there, enter a number of days and I will convert it to hours: ")
 validate_and_execute()
-''' NOTES
+''' NOTESj
 Now we want to focus on restriction and validation of user input that logically doesn't make sense, could crash our 
 program  or could be a security risk. 
 Line 5: Is the user input a positive number. Note: You have to indent the "return statement" so that it is evaluated by 
