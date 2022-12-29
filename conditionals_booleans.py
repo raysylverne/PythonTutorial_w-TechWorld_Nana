@@ -46,9 +46,40 @@ If true the function returns the calculated string > If false our else statement
 Equals:  a == b, Not Equals: a != b,less than < , greater than >, less than or equal <=,  greater than or equal >=
 '''
 
-# Error Handling with Try/Exept
+# Error Handling with Try/Except
+# If statements will only catch the errors we think of and prepare a condition for but if a user passed something we
+# haven't thought of that could crash the program. The try statement specifies exception handlers and/or cleanup code
+# for a group of statements. Try statement lets you "test" a block of code for errors. try: statements are useful
+# if in a situation where you can't validate input using if statements
 
 calculation_to_units = 24
+name_of_unit = "hours"
+def days_to_units(num_of_days):
+        return f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}"
+
+def validate_and_execute():
+    try:
+
+        user_input_number = int(user_input)
+        if user_input_number > 0:
+            calculated_value = days_to_units(user_input_number)
+            print(calculated_value)
+        elif user_input_number == 0:
+            print("You entered a 0, please enter a valid positive number")
+        else:
+            print("You entered a negative number, please enter a positive number")
+    except ValueError:  #Add the type of error you want to catch on this line after excpet. You can also leave it blank
+        #if you want to catch any error not just the one you specified.
+        print("Your input is not a number don't crash the program")
+
+user_input = input("Hey there, enter a number of days and I will convert it to hours: ")
+validate_and_execute()
+
+
+
+# Saved this version since it represents a simplified version of the syntax. Specifically the conversion of user_input
+#from string to int() on line 90
+'''calculation_to_units = 24
 name_of_unit = "hours"
 
 def days_to_units(num_of_days):
