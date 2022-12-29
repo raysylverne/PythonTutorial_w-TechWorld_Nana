@@ -1,6 +1,9 @@
 calculation_to_units = 24
 name_of_unit = "hours"
 
+# return statement is a special statement that you can use inside a function or method to
+# send the function's result back to the caller. In this case the results of the function is being
+# passed to the calculated_value variable which then can be used with the print function to display outcome
 
 def days_to_units(num_of_days):
     return f"{num_of_days} days are {num_of_days * calculation_to_units} {name_of_unit}"
@@ -15,6 +18,9 @@ user_input_number = int(user_input)
 calculated_value = days_to_units(user_input_number)
 print(calculated_value)
 
-
-'''return statement is a special statement that you can use inside a function or method to 
-send the function's result back to the caller.'''
+'''Realized that function wasn't working due to the days_to_units function was treated num_
+of_days as a string. Created the user_input_number variable that converts it to an intenge 
+by calling the built-in int function. Now when the calculated_value variable calls the 
+"days_to_units(user_input_number)" the code works since its treating num_of_days aka 
+user_input_number as an integer instead of a string
+'''
