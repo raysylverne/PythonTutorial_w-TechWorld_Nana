@@ -24,9 +24,17 @@ def validate_and_execute():
     except ValueError:
         print("Your input is not a number don't crash the program")
 
-# I ⬇had to add⬇ this variable here because I was getting NameError: name 'user_input' is not defined. The while loop
+# I ⬇had to add⬇ this variable here because I was getting "NameError: name 'user_input' is not defined" The while loop
 # cannot call it since it's not created until after the loop is run
 user_input = ""
 while user_input != "exit":
     user_input = input("Hey there, enter a number of days and I will convert it to hours: ")
     validate_and_execute()
+
+   ''' Program Workflow
+   # 1) assign and empty variable
+   # 2) condition gets evaluated
+   # 3) user is prompted for input 
+   # 4) Function is Called and input is validated and executed
+   # 5) The loop will continue until "exit" is passed as input
+   '''
