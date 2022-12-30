@@ -24,7 +24,9 @@ def validate_and_execute():
     except ValueError:
         print("Your input is not a number don't crash the program")
 
-
-while True:
+# I ⬇had to add⬇ this variable here because I was getting NameError: name 'user_input' is not defined. The while loop
+# cannot call it since it's not created until after the loop is run
+user_input = ""
+while user_input != "exit":
     user_input = input("Hey there, enter a number of days and I will convert it to hours: ")
     validate_and_execute()
