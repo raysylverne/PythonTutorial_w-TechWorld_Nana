@@ -21,7 +21,7 @@ def validate_and_execute(days_and_unit_dictionary):
         else:
             print("You entered a negative number, please enter a positive number")
     except ValueError:
-        print("Your days input must be a number and your conversion unit\n"
+        print("You entered and invalid input. `Your days input must be a number and your conversion unit\n"
               "should be seconds, minutes our hours. Please don't crash the program")
 
 

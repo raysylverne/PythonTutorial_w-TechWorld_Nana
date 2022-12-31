@@ -11,9 +11,10 @@ going to reference in  dict_module.py.
 # 1- In dict_module.py I only want the code that starts the program.
 # 2- Move and group all the functions, and logic in the dict_helper.py file
 # 3- Use Modules to connect the two files
+# 4- Showcase the two methods this can be accomplished
 
 
-''' 
+'''  
 #There are two ways to connect two files the first way shown here brings the entire file over using the following
 #statement import <filename> which can be seen below. Your also able change the way a file is referenced within another 
 file  by giving it something like an alias using the following syntax "import dict_helper as dh" now you simply place 
@@ -30,10 +31,13 @@ while user_input != "exit":
     dict_helper.validate_and_execute(days_and_unit_dictionary) #dict_helper. was referenced here
 '''
 
+
+
+
 # The second way to connect two files involves only bringing over select functions and variables instead of the
 # entire file with the "from <filename> import <function>, <variable>" statement
 
-
+'''
 from dict_helper import validate_and_execute, user_input_message
 
 user_input = ""
@@ -42,7 +46,7 @@ while user_input != "exit":
     days_and_unit = user_input.split(':')
     days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
     validate_and_execute(days_and_unit_dictionary)
-
+'''
 
 '''
 The difference between  import helper and from helper import * <-Means Import everything
@@ -58,3 +62,27 @@ needed where you require them without having to reference the module they came f
 It comes down to a matter of preference. The situation may dictate which makes more sense but for now I find the 
 "from <filename> import <function>, <variable>" statement  to have a cleaner look out of the two. 
 '''
+
+
+
+""" 
+Similar to built-in functions Python also provides built-in modules.
+In order to use these modules you call them with an import statement. To make use of it you need to  be familiar with 
+functions within the module by reading the documentation or using an intelligent IDE that  
+Below is and example of a logger for our app and logging an error message
+"""
+
+
+from dict_helper import validate_and_execute, user_input_message
+import logging
+
+logger = logging.getLogger("dict_module")
+logger.error("There was an error in the app")
+
+
+user_input = ""
+while user_input != "exit":
+    user_input = input(user_input_message)
+    days_and_unit = user_input.split(':')
+    days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
+    validate_and_execute(days_and_unit_dictionary)
