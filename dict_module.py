@@ -7,7 +7,7 @@ program using modules making your project modular. We will create our own module
 going to reference in  dict_module.py.
 '''
 
-#END GOAL#
+# END GOAL#
 # 1- In dict_module.py I only want the code that starts the program.
 # 2- Move and group all the functions, and logic in the dict_helper.py file
 # 3- Use Modules to connect the two files
@@ -15,28 +15,25 @@ going to reference in  dict_module.py.
 
 ''' 
 #There are two ways to connect two files the first way shown here brings the entire file over using the following
-#syntax import <filename>  can be seen below
+#syntax import <filename>  can be seen below you can also change the way a file is refereneced within another file 
+by giving it something like an alias with the following syntax "import helper as h"
 
 import dict_helper
 
 user_input = ""
 while user_input != "exit":
-    user_input = input("Hey there, enter a number of days and conversion unit.\n"
-                       "Conversion unit can be seconds, minutes our hours.\n"
-                       "Exp input (45:hours) Enter text here: ")
+    user_input = input(dict_helper.user_input_message) #dict_helper. was referenced here
     days_and_unit = user_input.split(':')
     print(days_and_unit)
     days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
-    dict_helper.validate_and_execute(days_and_unit_dictionary)
+    dict_helper.validate_and_execute(days_and_unit_dictionary) #dict_helper. was referenced here
 '''
 
-
-#The second way to connect tow files involves only brininging over select functions and variables instead of the
+# The second way to connect tow files involves only brininging over select functions and variables instead of the
 # entire file see below for syntax
 
 
 from dict_helper import validate_and_execute, user_input_message
-
 
 user_input = ""
 while user_input != "exit":
@@ -44,3 +41,14 @@ while user_input != "exit":
     days_and_unit = user_input.split(':')
     days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
     validate_and_execute(days_and_unit_dictionary)
+
+
+'''
+The difference between  import helper and from helper import * <-Means Import everything
+On the surface these appear to do the same thing, import the contents of an entire file into another 
+The key difference is in the syntax that you have to use with each 
+When using the import <filename> syntax you have to reference the name of the module every time you have to access 
+something from that module
+With the "from import" statement list the function or variable you want to use after the statement and use them as 
+needed where you require them without having to reference the module they came from. 
+'''
