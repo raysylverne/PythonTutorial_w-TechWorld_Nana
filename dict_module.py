@@ -15,7 +15,7 @@ going to reference in  dict_module.py.
 
 ''' 
 #There are two ways to connect two files the first way shown here brings the entire file over using the following
-#syntax import <filename>  can be seen below you can also change the way a file is refereneced within another file 
+#syntax import <filename>  can be seen below you can also change the way a file is referenced within another file 
 by giving it something like an alias with the following syntax "import helper as h"
 
 import dict_helper
@@ -47,8 +47,13 @@ while user_input != "exit":
 The difference between  import helper and from helper import * <-Means Import everything
 On the surface these appear to do the same thing, import the contents of an entire file into another 
 The key difference is in the syntax that you have to use with each 
-When using the import <filename> syntax you have to reference the name of the module every time you have to access 
+
+-When using the import <filename> statement you have to reference the name of the module every time you have to access 
 something from that module
-With the "from import" statement list the function or variable you want to use after the statement and use them as 
-needed where you require them without having to reference the module they came from. 
+
+With the "from import" statement you list the functions or variables you want to use after the statement and use them as 
+needed where you require them without having to reference the module they came from at every location. 
+
+It comes down to a matter of preference. The situation may dictate which makes more sense but for now I find the 
+"from import" statement to have a cleaner look out of the two. 
 '''
