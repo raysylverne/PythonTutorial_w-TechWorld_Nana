@@ -15,8 +15,9 @@ going to reference in  dict_module.py.
 
 ''' 
 #There are two ways to connect two files the first way shown here brings the entire file over using the following
-#syntax import <filename>  can be seen below you can also change the way a file is referenced within another file 
-by giving it something like an alias with the following syntax "import helper as h"
+#statement import <filename> which can be seen below. Your also able change the way a file is referenced within another 
+file  by giving it something like an alias using the following syntax "import dict_helper as dh" now you simply place 
+dh.validate_and_execute instead of  dict_helper.validate_and_execute when you need it. 
 
 import dict_helper
 
@@ -29,8 +30,8 @@ while user_input != "exit":
     dict_helper.validate_and_execute(days_and_unit_dictionary) #dict_helper. was referenced here
 '''
 
-# The second way to connect tow files involves only brininging over select functions and variables instead of the
-# entire file see below for syntax
+# The second way to connect two files involves only bringing over select functions and variables instead of the
+# entire file with the "from <filename> import <function>, <variable>" statement
 
 
 from dict_helper import validate_and_execute, user_input_message
@@ -55,5 +56,5 @@ With the "from import" statement you list the functions or variables you want to
 needed where you require them without having to reference the module they came from at every location. 
 
 It comes down to a matter of preference. The situation may dictate which makes more sense but for now I find the 
-"from import" statement to have a cleaner look out of the two. 
+"from <filename> import <function>, <variable>" statement  to have a cleaner look out of the two. 
 '''
