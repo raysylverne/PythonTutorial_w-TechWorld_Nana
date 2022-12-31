@@ -20,7 +20,6 @@ today_date = datetime.datetime.today()
 # calculate how many days from now until the deadline
 days_till_deadline = (deadline_date - today_date)
 
-
 # Use the completed logic to print a message back to the user
 print(f"Dear user! The time remaining for your goal: {goal} is {days_till_deadline.days} days "
       f"which is {int(days_till_deadline.total_seconds() / 60 / 60)} hour ")
