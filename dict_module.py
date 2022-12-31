@@ -37,7 +37,7 @@ while user_input != "exit":
 # The second way to connect two files involves only bringing over select functions and variables instead of the
 # entire file with the "from <filename> import <function>, <variable>" statement
 
-'''
+
 from dict_helper import validate_and_execute, user_input_message
 
 user_input = ""
@@ -46,7 +46,7 @@ while user_input != "exit":
     days_and_unit = user_input.split(':')
     days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
     validate_and_execute(days_and_unit_dictionary)
-'''
+
 
 '''
 The difference between  import helper and from helper import * <-Means Import everything
@@ -72,12 +72,9 @@ functions within the module by reading the documentation or using an intelligent
 Below is and example of a logger for our app and logging an error message
 """
 
-
+'''
 from dict_helper import validate_and_execute, user_input_message
 import logging
-
-logger = logging.getLogger("dict_module")
-logger.error("There was an error in the app")
 
 
 user_input = ""
@@ -86,3 +83,8 @@ while user_input != "exit":
     days_and_unit = user_input.split(':')
     days_and_unit_dictionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
     validate_and_execute(days_and_unit_dictionary)
+
+
+logger = logging.getLogger("dict_module")
+logger.error("There was an error in the app")
+'''
