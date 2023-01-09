@@ -16,23 +16,41 @@ Example: a user inputs accounting vs Accounting.
 COMPLEX
 Turn the above into a Function and execute the Function to verify it works.'''
 
-from random import randint
+from random import random
+from uuid import uuid4
 
 
-# 1. All the user to input how many EC2 instances they want names for and output the same amount of unique names.
-number_of_ec2s = input("How many EC2 instances do yuo require?\n")
+def string_generator():
+    return str(uuid4())
 
-# 2. Allow the user to input the name of their department that is used in the unique name.
-department_name = input("What is your department name?\n")
+# Allow the user to input the name of their department that is used in the unique name.
+department_name = input("Enter Department: Marketing, Accounting, FinOps: ")
+for i in department_name:
+    if department_name == "Marketing" or department_name == "marketing":
+        print(f"We can always rely on {department_name} department to follow company naming convention")
+        break
+    elif department_name == "Accounting" or "accounting" == department_name:
+        print(f"We can always rely on {department_name} department to follow company naming convention")
+        break
+    elif department_name == "FinOps" or "finOps" == department_name:
+        print(f"We can always rely on {department_name} department to follow company naming convention")
+        break
 
-# 3. Generate random characters and numbers that will be included in the unique name.
+    else:
+        print("Error: In order to use this generator, you enter the name correctly.\n"
+              "Example: Marketing, Accounting, FinOps")
+        exit()
 
-rand_ec2_namegen = randint(1, 1000)
+# All the user to input how many EC2 instances they want names for and output the same amount of unique names.
+number_of_ec2 = int(input("How many EC2 instances do you require?\n"))
+if number_of_ec2 < 0:
+    print("Please enter a positive number: ")
+elif number_of_ec2 > 0:
+    print(f"Creating {number_of_ec2} unique EC2 Instance Names")
 
+# Generate random characters and numbers that will be included in the unique name.
+for _ in range(1, number_of_ec2 + 1):
+    unique_name = department_name
+    EC2_unique_name = unique_name + "-" + string_generator()
+    print("Your EC2 Instance's unique name is : ", EC2_unique_name)
 
-'''
-The randint() function is defined in the python random module can be used to create random strings within a range.
-The function takes two numbers as its input argument. The first input argument is the #start of the range and the second
-input argument is the #end of the range. 
-After execution, the randint() function returns a random integer within the given range.
-'''
